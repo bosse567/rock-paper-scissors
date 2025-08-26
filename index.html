@@ -8,6 +8,10 @@
 </head>
 <body>
     <script>
+        let humanScore = 0;
+
+        let computerScore = 0;
+        
         function getComputerChoice() {
             probability = (Math.random() - 0.1) * 100;
             if (probability <= 33) {
@@ -18,10 +22,26 @@
                 return "scissors"
             } 
         }
+
+        let computerChoice = getComputerChoice();
         
         function getHumanChoice() {
-            userString = prompt("Please enter your choice :")
-            if (userString === "rock") {}
+            userString = prompt("Please enter the value of your choice :").toLowerCase();
+            if (userString === "rock") {
+                return "rock"
+            } else if (userString === "paper") {
+               return "paper"
+            } else if (userString === "scissors") {
+                return "scissors"
+            } else {
+                console.log("Please enter a valid input(rock, paper or scissors).");
+            }
+        }
+
+        let humanChoice = getHumanChoice();
+        
+        function playRound(humanChoice, computerChoice) {
+            
         }
     </script>
 </body>
