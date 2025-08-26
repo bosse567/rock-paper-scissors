@@ -24,6 +24,7 @@
         }
 
         let computerChoice = getComputerChoice();
+        console.log(`Computer choice is ${computerChoice}.`)
         
         function getHumanChoice() {
             userString = prompt("Please enter the value of your choice :").toLowerCase();
@@ -39,9 +40,25 @@
         }
 
         let humanChoice = getHumanChoice();
+        console.log(`Yours is ${humanChoice}.`)
         
         function playRound(humanChoice, computerChoice) {
-            
+            if ((humanChoice === "rock") && (computerChoice === "paper")) {
+                console.log("You lose! Paper beats Rock.");
+            } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+                console.log("You win! Rock beats Scissors.");
+            } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+                console.log("You win! Paper beats Rock.");
+            } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
+                console.log("You lose! Scissors beats Paper.");
+            } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+                console.log("You lose! Rock beats Scissors.");
+            } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+                console.log("You win! Scissors beats Paper.");
+            } else if (((humanChoice === "paper") && (humanChoice ==="paper")) || ((humanChoice === "rock") && (computerChoice === "rock")) || ((humanChoice === "paper") && (computerChoice === "paper"))){
+                console.log("It's a tie! Try again!");
+            }
         }
+        console.log(playRound())
     </script>
 </body>
